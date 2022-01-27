@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(168, 168, 168);
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid rgb(61, 61, 61);
+}
+
+td {
+    text-align: center;
+    padding: 10px 0;
+    border-width: 1px 0;
+    border-color: #000;
+    border-style: solid;
+}
+
+table td + td { 
+    border-left:2px solid rgb(0, 0, 0); 
+}

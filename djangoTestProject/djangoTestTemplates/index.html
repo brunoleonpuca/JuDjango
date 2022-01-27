@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html> <!--cuerpo principal de la pagina-->
+    <head> <!--tag para incluir archivos de JS, CSS o archivos que no muestran contenido --> 
+        <title>Django first website</title>
+        <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css"/>
+    </head> 
+
+    <body> <!--tag que SI muestra contenido en nuestra web--> 
+        <h1>Jugando con {{ context.item1 }} {{ context.item2 }}</h1> <!--Data estatica desde diccionarios creados en views.py-->
+        <br>
+        <h1>Jugando con variables dinamicas y request GET</h1>
+        <form method="post" action="counter"> <!--Data dinamica que es ingresada y redireccionada a otra ruta-->
+            {% csrf_token %}
+            <textarea name="text" rows="10" cols="50"></textarea><br>
+            <input type="submit"/>
+        </form>
+
+        <table>
+            <tr>
+              <th>Title</th>
+              <th>Critic</th>
+              <th>Score</th>
+            </tr>
+            {% for movie in movies %}
+            <tr>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.critic }}</td>
+                <td>{{ movie.score }}</td>
+            </tr>
+            {% endfor %}
+        </table>        
+
+    </body>
+</html>
