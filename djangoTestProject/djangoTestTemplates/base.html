@@ -18,10 +18,10 @@
         <ul class="nav">
             {% if user.is_authenticated %}
                 <div class="search-container">
-                    <form action="#">
+                    <!-- <form action="#">
                         <input type="text" placeholder="Search the movie you wish to see..." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+                    </form> -->
                 </div>
                 <li class="nav-item__logout">
                     <label>Session of: {{ user.username }}</label>
@@ -52,7 +52,7 @@
         </div>
     </section>
 
-    <footer class="page-footer font-small pt-4">
+    <footer class="page-footer font-small">
         <div class="container-fluid text-center text-md-left">
         </div>
         <div class="footer-copyright text-center py-3">© 2022 Copyright:<a href="#"> Tuhermana.com</a>

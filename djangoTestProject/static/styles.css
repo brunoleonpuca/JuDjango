@@ -4,32 +4,102 @@
     box-sizing: border-box;
 }
 
-/* :root {
+:root{ 
+    --clr-light-font: #eee;
+    --clr-grey-background: rgb(192, 192, 192);
 
-} */
+    --clr-body: #636363;
+    --clr-header: rgb(14, 0, 58);
+    --clr-footer: rgb(14, 0, 58);
+
+    --clr-theme-light: rgb(78, 25, 253);
+    --clr-theme-dark: rgb(35, 0, 100);
+
+    --bs-header: -2px 20px 4px #d8d8d8;
+    --bs-footer: -2px -20px 4px #d8d8d8;
+
+    --ff-primary: 'Open Sans', sans-serif;
+    --ff-secondary: 'Epilogue', sans-serif;
+
+    --fs-login: 3rem;
+    --fs-buttons: 2rem;
+    --fs-nav: 1.3rem;
+    --fs-blog_title: 1.5rem;
+    --fs-blog: 1rem;
+}
+
+/*--------------------------------------------------BODY/NAV SECTION----------------------------------------------------------*/
+
+html {
+    position: relative;
+    min-height: 100%;
+}
 
 body {
-    background-color: rgb(189, 189, 189) !important;
+    background-color: var(--clr-body) !important;
+    font-family: var(--ff-primary);
+    margin-bottom: 100px;
 }
 
-table {
-    table-layout: fixed !important;
-    width: 100%;
-    border-collapse: collapse;
-    border: 3px solid rgb(61, 61, 61) !important;
+.flash {
+    color: white;
 }
 
-td {
-    text-align: center !important;
-    padding: 10px 0 !important;
-    border-width: 1px 0 !important;
-    border-color: #000 !important;
-    border-style: solid !important;
+.mb-4 {
+    filter: invert(1);
 }
 
-table td + td { 
-    border-left:2px solid rgb(0, 0, 0) !important; 
+.nav {
+    justify-content: flex-end
 }
+
+.nav-item__logout {
+    display: flex;
+    align-items: baseline;
+    margin: 0 30px;
+}
+
+.nav-item__logout label {
+    margin-right: 20px;
+}
+
+.nav a {
+    background-color: transparent;
+    color: var(--clr-light-font);
+    border: 3px solid var(--clr-theme-light);
+    box-shadow: 4px 6px 5px var(--clr-theme-dark);
+    margin: 10px 10px;
+}
+
+.nav a:active {
+    transform: scale(0.95, 0.95);
+}
+
+.nav img{
+    position: absolute;
+    top: 0;
+    left: 30px;
+}
+
+.search-container {
+    float: right;
+    padding: 10px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: var(--clr-theme-dark);
+    font-size: 20px;
+    /* border: 2px solid var(--clr-theme-light); */
+}
+
+.search-container button{
+    cursor: pointer;
+}
+
+.search-container input {
+    width: 350px;
+}
+
+
 
 /*-------------------------------------------------FOOTER SECTION----------------------------------------------------------------*/
 

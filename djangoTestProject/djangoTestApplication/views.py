@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Movie
+from .models import Movie, MovieCritic
 
 # Create your views here.
 def index(request):
@@ -11,8 +11,11 @@ def index(request):
     #     'item2': 'estaticas'
     # }
     # 'context': context
-    movies = Movie.objects.all()
+    movies = MovieCritic.objects.all()
     return render(request, 'workspace/index.html', { 'movies': movies })
+
+def goToHome(request):
+    return redirect('/')
 
 def register(request):
     if request.method == "POST":
@@ -63,3 +66,6 @@ def logout(request):
 #     text = request.POST['text']
 #     amount_of_words = len(text.split())
 #     return render(request, 'counter.html', {'amount': amount_of_words})
+
+
+# current_user = request.user.id
