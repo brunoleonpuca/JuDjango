@@ -30,3 +30,15 @@ td {
 table td + td { 
     border-left:2px solid rgb(0, 0, 0) !important; 
 }
+
+/*-------------------------------------------------FOOTER SECTION----------------------------------------------------------------*/
+
+footer {
+    background-color: var(--clr-footer);
+    color: white;
+    border-top: 2px solid var(--cld-theme);
+    box-shadow: var(--bs-footer);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}

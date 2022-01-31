@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% csrf_token %}
+<title>{% block title %}Homepage{% endblock %}</title>
+
+{% block content %}
+<!-- <h1>Jugando con {{ context.item1 }} {{ context.item2 }}</h1> Data estatica desde diccionarios creados en views.py -->
+<br>
+<!-- <h1>Jugando con variables dinamicas y request GET</h1> -->
+<!-- <form method="post" action="counter"> Data dinamica que es ingresada y redireccionada a otra ruta -->
+    <!-- <textarea name="text" rows="2" cols="50"></textarea><br> -->
+    <!-- <input type="submit"/> -->
+<!-- </form> -->
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Critic</th>
+        <th>Score</th>
+    </tr>
+    {% for movie in movies %}
+    <tr>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.critic }}</td>
+        <td>{{ movie.score }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

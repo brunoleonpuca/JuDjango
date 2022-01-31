@@ -6,12 +6,13 @@ from .models import Movie
 
 # Create your views here.
 def index(request):
-    context = {
-        'item1': 'variables',
-        'item2': 'estaticas'
-    }
+    # context = {
+    #     'item1': 'variables',
+    #     'item2': 'estaticas'
+    # }
+    # 'context': context
     movies = Movie.objects.all()
-    return render(request, 'index.html', {'movies': movies, 'context': context})
+    return render(request, 'workspace/index.html', { 'movies': movies })
 
 def register(request):
     if request.method == "POST":
@@ -35,7 +36,7 @@ def register(request):
             messages.info(request, 'Passwords does not match')
             return redirect('register')
     else:
-        return render(request, 'register.html')
+        return render(request, 'auth/register.html')
 
 
 def login(request):
@@ -51,13 +52,14 @@ def login(request):
             messages.info(request, 'User does not exist')
             return redirect('login')
 
-    return render(request, 'login.html')
+    return render(request, 'auth/login.html')
+
 
 def logout(request):
     auth.logout(request)
     return redirect('/')
 
-def counter(request):
-    text = request.POST['text']
-    amount_of_words = len(text.split())
-    return render(request, 'counter.html', {'amount': amount_of_words})
+# def counter(request):
+#     text = request.POST['text']
+#     amount_of_words = len(text.split())
+#     return render(request, 'counter.html', {'amount': amount_of_words})
