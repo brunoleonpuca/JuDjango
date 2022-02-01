@@ -5,27 +5,35 @@
 }
 
 :root{ 
-    --clr-light-font: #eee;
-    --clr-grey-background: rgb(192, 192, 192);
-
-    --clr-body: #636363;
-    --clr-header: rgb(14, 0, 58);
-    --clr-footer: rgb(14, 0, 58);
-
-    --clr-theme-light: rgb(78, 25, 253);
-    --clr-theme-dark: rgb(35, 0, 100);
-
-    --bs-header: -2px 20px 4px #d8d8d8;
-    --bs-footer: -2px -20px 4px #d8d8d8;
-
+    /* Fonts */
     --ff-primary: 'Open Sans', sans-serif;
     --ff-secondary: 'Epilogue', sans-serif;
 
+    /* Font size */
     --fs-login: 3rem;
     --fs-buttons: 2rem;
     --fs-nav: 1.3rem;
     --fs-blog_title: 1.5rem;
     --fs-blog: 1rem;
+
+    /* Color Body dark */
+    --body-dark: #191919;
+    --header-dark: #d84629;
+    --footer-dark: #101125;
+    /* Color containers */
+    --form-dark: #1c1e43;
+    /* Color Buttons */
+    --nav-buttons-dark: #191919;
+    /* Color Fonts */
+    --f-dark: #ECDBBA;
+
+
+    /* Body light */
+    --clr-light-font: #eee;
+    --clr-grey-background: rgb(192, 192, 192);
+
+    --bs-header: -2px 20px 4px #d8d8d8;
+    --bs-footer: -2px -20px 4px #d8d8d8;
 }
 
 /*--------------------------------------------------BODY/NAV SECTION----------------------------------------------------------*/
@@ -36,8 +44,9 @@ html {
 }
 
 body {
-    background-color: var(--clr-body) !important;
+    background-color: var(--body-dark) !important;
     font-family: var(--ff-primary);
+    color: var(--f-dark) !important;
     margin-bottom: 100px;
 }
 
@@ -50,7 +59,8 @@ body {
 }
 
 .nav {
-    justify-content: flex-end
+    background-color: var(--header-dark);
+    justify-content: flex-end;
 }
 
 .nav-item__logout {
@@ -64,18 +74,20 @@ body {
 }
 
 .nav a {
-    background-color: transparent;
-    color: var(--clr-light-font);
-    border: 3px solid var(--clr-theme-light);
-    box-shadow: 4px 6px 5px var(--clr-theme-dark);
+    background: var(--nav-buttons-dark);
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(170, 170, 204, 0.25), 10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #FFFFFF;
+    border-radius: 32px;
+    color: var(--nav-dark);
     margin: 10px 10px;
 }
 
 .nav a:active {
-    transform: scale(0.95, 0.95);
+    background: var(--nav-buttons-dark);
+    box-shadow: 5px 5px 10px rgba(170, 170, 204, 0.5), -5px -5px 10px #FFFFFF;
+    border-radius: 32px;
 }
 
-.nav img{
+.nav img {
     position: absolute;
     top: 0;
     left: 30px;
@@ -86,7 +98,7 @@ body {
     padding: 10px 10px;
     margin-top: 8px;
     margin-right: 16px;
-    background: var(--clr-theme-dark);
+    background: var(--nav-dark);
     font-size: 20px;
     /* border: 2px solid var(--clr-theme-light); */
 }
@@ -99,15 +111,36 @@ body {
     width: 350px;
 }
 
+/*-------------------------------------------------REGISTER/LOGIN SECTION----------------------------------------------------------------*/
+
+.container-register{
+    margin-bottom: 2rem;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+.form-register {
+    flex: 1 1 0px;
+    background-color: var(--form-dark);
+}
+
+.jumbotron-register {
+    flex: 1 1 0px;
+}
+
 
 
 /*-------------------------------------------------FOOTER SECTION----------------------------------------------------------------*/
 
 footer {
-    background-color: var(--clr-footer);
+    background-color: var(--footer-dark);
     color: white;
-    border-top: 2px solid var(--cld-theme);
-    box-shadow: var(--bs-footer);
+    border-top: 2px solid var(--clr-theme-light);
+    /* box-shadow: var(--bs-footer); */
     position: absolute;
     bottom: 0px;
     width: 100%;
